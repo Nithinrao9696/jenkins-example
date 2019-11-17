@@ -34,5 +34,30 @@ pipeline {
                 
             }
         }
+          stage('Build in feature') {
+             when {
+                branch 'Nithin/*'  
+            }
+            steps {
+                println("Testing")
+            }
+        }
+        stage('Deliver in dev') {
+             when {
+                branch 'development'  
+            }
+            steps {
+                println("Testing")
+            }
+
+        }
+        stage('Deliver in prod') {
+             when {
+                branch 'master'  
+            }
+            steps {
+                println("Testing")
+            }
+        }
     }
 }
